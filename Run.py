@@ -1,6 +1,7 @@
 from Socket import openSocket, sendMessage
 from Initialize import joinRoom
 import string
+#Runs the Bot
 
 s = openSocket()
 joinRoom(s)
@@ -14,4 +15,3 @@ while True:
 	for line in temp:
 		print(line)
 		sendMessage(s, "Greetings my dude")
-        

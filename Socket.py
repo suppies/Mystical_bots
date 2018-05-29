@@ -1,7 +1,7 @@
 import socket
 from Settings import HOST,PORT, PASS, NAME, CHANNEL
 
-#irc protocol stuff
+#irc protocol stuff, creats a socket that is connected to server specified in settings
 def openSocket():
 	s = socket.socket()
 	s.connect((HOST,PORT))
@@ -13,6 +13,7 @@ def openSocket():
 	s.sendto(message.encode('utf-8'),(HOST,PORT))
 	return s
 
+#allows the bot to send message to the socket
 def sendMessage(s, message):
 	messageTemp = "PRIVMSG #" + CHANNEL + " :" + message
 	s.send(bytes(messageTemp + "\r\n" , "UTF-8"))
